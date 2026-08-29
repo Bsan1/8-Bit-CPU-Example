@@ -1,33 +1,33 @@
-# CNG331 Computer Organization
+# 8-Bit CPU Example
 
-An 8-bit processor built in Logisim, starting from individual arithmetic circuits and ending with a single-cycle CPU.
+A processor built in Logisim from custom arithmetic circuits, registers, memory, and control logic.
 
-## 8-bit ALU
+## ALU
 
-The ALU is assembled from custom subcircuits instead of relying on ready-made arithmetic blocks. It supports addition, bitwise AND/OR, and bit rotation. Separate circuits handle two's-complement conversion, equality comparison, rotation, and full addition.
-
-The output includes zero, sign, carry, overflow, and equality flags. Test vectors were used to verify the subcircuits and the complete ALU.
-
-## Register file and memory
-
-The processor uses eight 8-bit registers, ROM for instructions, and RAM for data. A control unit selects ALU operations, register write-back sources, memory reads and writes, and immediate operands. Instructions are encoded in a custom 21-bit format.
-
-## Single-cycle CPU
-
-The final processor adds branching, jumps, jump-and-link, jump-register, and set-less-than operations. Extra multiplexers select the next program-counter value and destination register. Each instruction completes in one clock cycle.
-
-## Included circuits
+The 8-bit ALU supports addition, AND, OR, and bit rotation. It also produces zero, sign, carry, overflow, and equality flags.
 
 ```text
-Part1/All_Circuits_FIXED.circ   ALU and supporting circuits
-Part3/8bitCPU_FIXED.circ        Complete single-cycle processor
+Opcode  Operation
+00      ADD
+01      AND
+10      OR
+11      ROTATE
 ```
 
-## Technology
+## Processor
 
-- Logisim
-- Digital logic design
-- CPU datapath and control design
+The CPU has eight 8-bit registers, ROM instruction memory, RAM data memory, and a custom 21-bit instruction format. The final datapath supports arithmetic, load/store, immediate values, branches, jumps, jump-and-link, jump-register, and set-less-than.
+
+```text
+Instruction -> Control Unit -> Register File -> ALU -> Memory/Write-back
+```
+
+## Circuit files
+
+```text
+Part1/ALU-Circuits.circ   ALU and supporting circuits
+Part3/8bitCPU.circ        Single-cycle processor
+```
 
 ## Author
 
