@@ -6,6 +6,8 @@ A processor built in Logisim from custom arithmetic circuits, registers, memory,
 
 The 8-bit ALU supports addition, AND, OR, and bit rotation. It also produces zero, sign, carry, overflow, and equality flags.
 
+Building the ALU from smaller circuits demonstrates how arithmetic and logical operations are implemented at gate level. It also gives practical experience with binary representation, multiplexers, adders, comparators, and processor status flags.
+
 ```text
 Opcode  Operation
 00      ADD
@@ -17,6 +19,8 @@ Opcode  Operation
 ## Processor
 
 The CPU has eight 8-bit registers, ROM instruction memory, RAM data memory, and a custom 21-bit instruction format. The final datapath supports arithmetic, load/store, immediate values, branches, jumps, jump-and-link, jump-register, and set-less-than.
+
+This part connects the individual components into a complete datapath. It demonstrates instruction encoding, register addressing, control-signal generation, memory access, program-counter updates, and the relationship between a CPU's control unit and datapath.
 
 ```text
 Instruction -> Control Unit -> Register File -> ALU -> Memory/Write-back
