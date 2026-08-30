@@ -1,12 +1,10 @@
-# 8-Bit CPU Example
+# 8-Bit Processor Design
 
-A processor built in Logisim from custom arithmetic circuits, registers, memory, and control logic.
+A set of Logisim circuits developed to understand how a processor grows from small arithmetic components into a complete single-cycle datapath.
 
-## ALU
+## ALU design
 
-The 8-bit ALU supports addition, AND, OR, and bit rotation. It also produces zero, sign, carry, overflow, and equality flags.
-
-Building the ALU from smaller circuits demonstrates how arithmetic and logical operations are implemented at gate level. It also gives practical experience with binary representation, multiplexers, adders, comparators, and processor status flags.
+The 8-bit arithmetic logic unit supports addition, AND, OR, and bit rotation. It also produces zero, sign, carry, overflow, and equality flags. Building these operations from smaller circuits provides practical experience with binary representation, adders, multiplexers, comparators, and processor status flags.
 
 ```text
 Opcode  Operation
@@ -16,26 +14,29 @@ Opcode  Operation
 11      ROTATE
 ```
 
-## Processor
+## Processor core
 
-The CPU has eight 8-bit registers, ROM instruction memory, RAM data memory, and a custom 21-bit instruction format. The final datapath supports arithmetic, load/store, immediate values, branches, jumps, jump-and-link, jump-register, and set-less-than.
+The processor core combines eight 8-bit registers with instruction memory, data memory, and a control unit. Its custom 21-bit instruction format supports arithmetic, load and store operations, immediate values, conditional branches, jumps, jump-and-link, jump-register, and set-less-than.
 
-This part connects the individual components into a complete datapath. It demonstrates instruction encoding, register addressing, control-signal generation, memory access, program-counter updates, and the relationship between a CPU's control unit and datapath.
+This stage focuses on instruction encoding, register addressing, control-signal generation, memory access, and write-back behavior.
 
-```text
-Instruction -> Control Unit -> Register File -> ALU -> Memory/Write-back
-```
+## Single-cycle processor
 
-## Circuit files
+The final circuit connects the datapath and control logic so that each instruction completes in one clock cycle. It demonstrates how the program counter, register file, ALU, memory, and control unit cooperate during instruction execution.
 
 ```text
-Part1/ALU-Circuits.circ   ALU and supporting circuits
-Part2/8bitCPU.circ        CPU with register file, ROM, RAM, and control unit
-Part2/CPU-Design-Report.pdf
-                          Instruction encoding and processor test results
-Part3/8bitCPU.circ        Single-cycle processor
+Instruction -> Control Unit -> Register File -> ALU -> Memory -> Write-back
 ```
 
-## Author
+## Project files
+
+```text
+ALU-Design/ALU-Circuits.circ
+Processor-Core/Processor-Core.circ
+Processor-Core/Processor-Design-Report.pdf
+Single-Cycle-Processor/Single-Cycle-Processor.circ
+```
+
+## Contributor
 
 Barış Şan
