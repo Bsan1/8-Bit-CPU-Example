@@ -30,6 +30,9 @@ Instruction -> Control Unit -> Register File -> ALU -> Memory/Write-back
 
 ```text
 Part1/ALU-Circuits.circ   ALU and supporting circuits
+Part2/8bitCPU.circ        CPU with register file, ROM, RAM, and control unit
+Part2/CPU-Design-Report.pdf
+                          Instruction encoding and processor test results
 Part3/8bitCPU.circ        Single-cycle processor
 ```
 
