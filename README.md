@@ -33,7 +33,6 @@ Instruction -> Control Unit -> Register File -> ALU -> Memory -> Write-back
 ```text
 ALU-Design/ALU-Circuits.circ
 Processor-Core/Processor-Core.circ
-Processor-Core/Processor-Design-Report.pdf
 Single-Cycle-Processor/Single-Cycle-Processor.circ
 ```
 
